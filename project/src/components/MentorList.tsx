@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle} from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useNavigate } from 'react-router-dom';
 
@@ -156,10 +155,9 @@ export default function MentorList({ isStudent }: Readonly<MentorListProps>) {
                 </div>
                 
                 {isStudent ? (
-                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4" />
-                    <span>Message</span>
-                  </button>
+                  <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors" onClick={() => navigate(`/mentor/${mentor.id}`)}>
+                  View Profile
+                </button>
                 ) : (
                   <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors" onClick={() => navigate(`/mentor/${mentor.id}`)}>
                     View Profile
